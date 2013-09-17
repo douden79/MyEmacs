@@ -50,13 +50,13 @@
 
 (setq org2blog/wp-blog-alist
 	  '(("wordpress"
-		 :url "http://douden.woobi.co.kr/wordpress/xmlrpc.php"
+		 :url "http://192.168.1.110/wordpress/xmlrpc.php"
 		 :username "douden"
 		 :default-title "Hello World"
-		 :default-categories ("org2blog" "emacs")
+		 :default-categories ("emacs")
 		 :tags-as-categories nil)
 		("my-blog"
-		 :url "http://douden.woobi.co.kr/wordpress/xmlprc.php"
+		 :url "http://192.168.1.110/wordpress/xmlprc.php"
 		 :username "douden")))
 
 
