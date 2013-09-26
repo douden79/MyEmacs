@@ -107,6 +107,18 @@
                 (make-local-variable 'ac-sources)
 				(setq ac-sources '(ac-source-c++))))
 
+; autoload gtags mode.
+(autoload 'helm-gtags-mode "gtags" "" t)
+(add-hook 'c-mode-hook
+	'(lambda ()
+		(helm-gtags-mode t)))
+(add-hook 'c++-mode-hook
+	'(lambda ()
+		(helm-gtags-mode t)))
+(add-hook 'python-mode-hook
+	'(lambda ()
+		(helm-gtags-mode t)))
+
 ; set background color
 (set-background-color "#1B1B1B")
 
