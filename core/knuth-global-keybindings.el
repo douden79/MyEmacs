@@ -47,6 +47,11 @@
               (local-set-key (kbd "M-[") 'helm-gtags-find-rtag)
               (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
               (local-set-key (kbd "M-g M-p") 'helm-gtags-parse-file)))
+;; highlight at point
+(require 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-at-point)
+(global-set-key [f4] 'highlight-symbol-next) 
+(global-set-key [f2] 'highlight-symbol-prev) 
 
 (provide 'knuth-global-keybindings)
 ;; end knuth-global-keybindings
