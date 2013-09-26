@@ -13,7 +13,7 @@
 
 (defvar knuth-packages
   '( auto-complete auto-yasnippet css-mode highlight-symbol markdown-mode+ expand-region ecb git-commit-mode gitconfig-mode gitignore-mode helm-gtags diminish rainbow-mode smartparens auctex 
-     magit volatile-highlights solarized-theme mouse+ multi-term org2blog metaweblog xml-rpc tabbar-ruler sr-speedbar  )
+     magit volatile-highlights solarized-theme mouse+ multi-term metaweblog xml-rpc tabbar-ruler sr-speedbar  )
   "A list of packages to ensure are installed at launch.")
 
 (defun knuth-packages-installed-p ()
