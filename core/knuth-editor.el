@@ -11,12 +11,62 @@
 ;; indentation width -- eg. c-basic-offset: use that to adjust your
 ;; personal indentation width, while maintaining the style (and
 ;; meaning) of any files you load.
-(setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
-(setq-default tab-width 8)            ;; but maintain correct appearance
+;(setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
+(setq-default tab-width 2)            ;; but maintain correct appearance
+(setq-default c-basic-offset 4
+			  tab-width 4
+			  indent-tabs-mode t)
+
+; python tab hook
+(add-hook 'python-mode-hook
+		(function (lanmbda ()
+				   (setq indent-tabs-mode t
+						tab-width 4))))
+
+;; automatic indentation
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
 
 ;; highlight the current line
 (global-hl-line-mode +1)
 
+;; yasnippet
+(require 'yasnippet)
+
+(yas-global-mode 1)
+ 
+(defun ac-yasnippet-candidates ()
+  (with-no-warnings
+    (cond
+      (;; 0.8 onwards
+        (fboundp 'yas-active-keys)
+        (all-completions ac-prefix (yas-active-keys)))
+      (;; >0.6.0
+        (fboundp 'yas/get-snippet-tables)
+        (apply 'append (mapcar 'ac-yasnippet-candidate-1
+          (condition-case nil
+            (yas/get-snippet-tables major-mode)
+            (wrong-number-of-arguments
+              (yas/get-snippet-tables))))))
+      (t
+        (let
+          (
+            (table
+              (if (fboundp 'yas/snippet-table)
+                ;; <0.6.0
+                (yas/snippet-table major-mode)
+                ;; 0.6.0
+                (yas/current-snippet-table))))
+        (if table
+          (ac-yasnippet-candidate-1 table)))))))
+ 
+(defface ac-yasnippet-candidate-face
+  '((t (:background "sandybrown" :foreground "black")))
+  "Face for yasnippet candidate."
+  :group 'auto-complete)
+ 
+(defface ac-yasnippet-selection-face
+  '((t (:background "coral3" :foreground "white")))
+  "Face for the yasnippet selected candidate.")
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 (diminish 'volatile-highlights-mode)
@@ -55,9 +105,7 @@
 		 :default-title "Hello World"
 		 :default-categories ("emacs")
 		 :tags-as-categories nil)
-		("my-blog"
-		 :url "http://192.168.1.110/wordpress/xmlprc.php"
-		 :username "douden")))
+		 ))
 
 
 ;; Auto-complete
@@ -119,6 +167,22 @@
 	'(lambda ()
 		(helm-gtags-mode t)))
 
+; linux kernel c style and mode
+; under line fix path for your linux kernel directory.
+(defun linux-c-mode ()
+  "C mode with adjusted defaults for use with the Linux kernel."
+  (interactive)
+  (c-mode)
+  (c-set-style "K&R")
+  (setq tab-width 8)
+  (setq indent-tabs-mode t)
+  (setq c-basic-offset 8))
+
+;;yasnnipet
+(define-key global-map (kbd "C-.") 'yas-expand)
+
+(setq auto-mode-alist (cons '("~/000.ST/linux.*/.*\\.[ch]$" . linux-c-mode)
+                        auto-mode-alist))
 ; set background color
 (set-background-color "#1B1B1B")
 
@@ -130,4 +194,5 @@
 
 (provide 'knuth-editor)
 ;;; knuth-editor.el ends here
+
 
