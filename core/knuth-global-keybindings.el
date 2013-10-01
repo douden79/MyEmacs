@@ -18,6 +18,9 @@
 (define-key ecb-mode-map (kbd "M-5") 'ecb-goto-window-compilation)
 (define-key ecb-mode-map (kbd "M-0") 'ecb-goto-window-edit1)
 
+;; yasnnippet
+(define-key global-map (kbd "C-.") 'yas-expand)
+
 ;; move emacs windows
 (global-set-key [M-left] 'windmove-left)
 (global-set-key [M-right] 'windmove-right)

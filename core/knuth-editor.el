@@ -19,9 +19,12 @@
 
 ; python tab hook
 (add-hook 'python-mode-hook
-		(function (lanmbda ()
+		(function (lambda ()
 				   (setq indent-tabs-mode t
 						tab-width 4))))
+
+;; default disable make-backup-files
+(setq make-backup-files nil)
 
 ;; automatic indentation
 (add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
@@ -93,14 +96,15 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
- ;; global auto-complete mode
- 
+; ansi-term mode disable yasnnipet
+(add-hook 'term-mode-hook (lambda()
+						   (yas-minor-mode -1)))
  ;; org2blog mode
 (require 'org2blog-autoloads)
 
 (setq org2blog/wp-blog-alist
 	  '(("wordpress"
-		 :url "http://192.168.1.110/wordpress/xmlrpc.php"
+		 :url "http://douden.woobi.co.kr/wordpress/xmlrpc.php"
 		 :username "douden"
 		 :default-title "Hello World"
 		 :default-categories ("emacs")
@@ -177,9 +181,6 @@
   (setq tab-width 8)
   (setq indent-tabs-mode t)
   (setq c-basic-offset 8))
-
-;;yasnnipet
-(define-key global-map (kbd "C-.") 'yas-expand)
 
 (setq auto-mode-alist (cons '("~/000.ST/linux.*/.*\\.[ch]$" . linux-c-mode)
                         auto-mode-alist))
