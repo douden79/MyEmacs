@@ -20,8 +20,9 @@
 ; python tab hook
 (add-hook 'python-mode-hook
 		(function (lambda ()
-				   (setq indent-tabs-mode t
-						tab-width 4))))
+				   (setq indent-tabs-mode t)
+				   (setq tab-width 4)
+				   (setq python-indent 4))))
 
 ;; default disable make-backup-files
 (setq make-backup-files nil)
