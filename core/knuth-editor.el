@@ -24,6 +24,8 @@
 				   (setq tab-width 4)
 				   (setq python-indent 4))))
 
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+
 ;; default disable make-backup-files
 (setq make-backup-files nil)
 

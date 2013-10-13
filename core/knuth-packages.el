@@ -12,7 +12,7 @@
 (package-initialize)
 
 (defvar knuth-packages
-  '( auto-complete auto-yasnippet css-mode highlight-symbol markdown-mode+ expand-region ecb git-commit-mode gitconfig-mode gitignore-mode helm-gtags diminish rainbow-mode smartparens auctex 
+  '( auto-complete auto-yasnippet css-mode cl flymake-python-pyflakes flymake-cursor highlight-symbol markdown-mode+ expand-region ecb git-commit-mode gitconfig-mode gitignore-mode helm-gtags diminish rainbow-mode smartparens auctex 
      magit volatile-highlights solarized-theme mouse+ multi-term metaweblog org2blog xml-rpc tabbar-ruler sr-speedbar  )
   "A list of packages to ensure are installed at launch.")
 
