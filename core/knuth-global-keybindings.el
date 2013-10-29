@@ -50,6 +50,10 @@
               (local-set-key (kbd "M-[") 'helm-gtags-find-rtag)
               (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
               (local-set-key (kbd "M-g M-p") 'helm-gtags-parse-file)))
+
+;; browser killing
+(global-set-key [f7] 'browse-kill-ring)
+
 ;; highlight at point
 (require 'highlight-symbol)
 (global-set-key [f3] 'highlight-symbol-at-point)
