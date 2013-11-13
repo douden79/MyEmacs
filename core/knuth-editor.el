@@ -24,6 +24,13 @@
 				   (setq tab-width 4)
 				   (setq python-indent 4))))
 
+; default coding system.
+(set-default buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+(set-default default-buffer-file-coding-system 'utf-8-unix)
+
+
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
 ;; browse kill ring
