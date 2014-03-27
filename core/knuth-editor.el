@@ -12,7 +12,8 @@
 ;; personal indentation width, while maintaining the style (and
 ;; meaning) of any files you load.
 ;(setq-default indent-tabs-mode nil)   ;; don't use tabs to indent
-(setq-default tab-width 2)            ;; but maintain correct appearance
+(setq-default tab-width 4)            ;; but maintain correct appearance
+(scroll-bar-mode -1)
 (setq-default c-basic-offset 4
 			  tab-width 4
 			  indent-tabs-mode t)
@@ -25,10 +26,10 @@
 				   (setq python-indent 4))))
 
 ; default coding system.
-(set-default buffer-file-coding-system 'utf-8-unix)
-(set-default-coding-systems 'utf-8-unix)
-(prefer-coding-system 'utf-8-unix)
-(set-default default-buffer-file-coding-system 'utf-8-unix)
+(set-default buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default default-buffer-file-coding-system 'utf-8)
 
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
@@ -200,13 +201,12 @@ If no such overlay, raise an error."
 
 (setq org2blog/wp-blog-alist
 	  '(("wordpress"
-		 :url "http://douden.woobi.co.kr/wordpress/xmlrpc.php"
+		 :url "http://192.168.1.138/word/xmlrpc.php"
 		 :username "douden"
 		 :default-title "Hello World"
 		 :default-categories ("emacs")
 		 :tags-as-categories nil)
 		 ))
-
 
 ;; Auto-complete
 (require 'auto-complete)

@@ -1,6 +1,14 @@
  ;;; prelude-global-keybindings.el --- Emacs Prelude: some useful keybindings.
  ;;; copy
  
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(setq org-agenda-files (list "~/Doc/2014/company.org"
+							 "~/Doc/individual.org")) 
+
  ;Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
