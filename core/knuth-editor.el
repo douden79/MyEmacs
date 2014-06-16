@@ -283,6 +283,11 @@ If no such overlay, raise an error."
 ; set background color
 (set-background-color "#1B1B1B")
 
+; multi term
+(require 'multi-term)
+(multi-term-keystroke-setup)
+(setq multi-term-program "/bin/bash")
+
 ; set cusor color
 (set-cursor-color "#268BD2")
 

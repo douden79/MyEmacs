@@ -1,0 +1,128 @@
+ls
+cd .emacs.d/
+ls
+ls
+ls
+ls
+cd ~
+cd ~.em
+cd ~
+ls
+cd .emacs.d/
+ls
+ls
+cd ~
+ls
+rm -rf Documents/
+rm -rf Downloads/
+ls
+cd FOLDERNAME/
+ls
+cd ~
+ls
+rm -rf Fo
+rm -rf FOLDERNAME/
+ls
+rm -rf Templates/
+ls
+rm -rf Public/
+ls
+rm -rf Videos/
+ls
+vi bundle_vim.sh 
+ls
+rm -rf bundle_vim.sh 
+cd vimconfig/
+ls
+cd ..
+ls
+cd powerline-shell/
+ls
+cd ..
+ls
+cd 3712874/
+ls
+cd ~
+ls
+git clone perpectgit@1.215.81.2:repositories/BCMLinuxDVB
+cd 3712874/
+ls
+cd ~
+ls
+cd BCMLinuxDVB/
+ls
+ls
+ls
+cd BcmLinuxDVB/
+ls
+git log
+ls
+exit
+ls
+cd ~
+ls
+git clone https://github.com/arm11a/linux_kernel.git
+ls
+ls
+cd ~
+ls
+cd linux_kernel/
+ls
+cd linux-3.12.20/
+ls
+ls
+cd ~
+ls
+cd Down
+ls
+ls
+cd ~
+ls
+rm -rf vimconfig/
+ls
+d 3712874/
+ls
+cd 3712874/
+ls
+cd ~
+ls
+rm -rf 3712874/
+ls
+cd linux_kernel/
+ls
+cd ~
+ls
+cd Pictures/
+ls
+ls -alth
+cd ~
+ls
+rm -rf Pictures/
+ls
+cd Bc
+cd ~
+ls
+-rw-r--r--   1 knuth          knuth    1.2k 2014-06-15 13:36 .bashrc
+ls
+cd ~
+ls
+ls
+sud
+clear
+cd ~
+ls
+exit
+ls
+cd BCMLinuxDVB/
+ls
+cd BcmLinuxDVB/
+ls
+cd DRV/
+ls
+cd 20101203/
+ls
+cd br
+ls
+cd ..
+ls
+ls
