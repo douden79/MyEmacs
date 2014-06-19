@@ -280,6 +280,17 @@ If no such overlay, raise an error."
 
 (setq auto-mode-alist (cons '("~/000.ST/linux.*/.*\\.[ch]$" . linux-c-mode)
                         auto-mode-alist))
+; tabbar preference
+(setq tabbar-background-color "#959A79") ;; the color of the tabbar background
+(custom-set-faces
+  '(tabbar-default ((t (:inherit variable-pitch :background "#959A79" :foreground "black" :weight bold))))
+  '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
+  '(tabbar-button-highlight ((t (:inherit tabbar-default))))
+  '(tabbar-highlight ((t (:underline t))))
+  '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
+  '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
+  '(tabbar-unselected ((t (:inherit tabbar-default)))))
+
 ; set background color
 (set-background-color "#1B1B1B")
 

@@ -12,8 +12,8 @@
 (package-initialize)
 
 (defvar knuth-packages
-  '( ange-ftp auto-complete auto-yasnippet css-mode cl flymake-python-pyflakes flymake-cursor highlight-symbol markdown-mode+ expand-region ecb git-commit-mode gitconfig-mode gitignore-mode helm-gtags diminish rainbow-mode smartparens auctex 
-     magit volatile-highlights solarized-theme mouse+ multi-term metaweblog org2blog xml-rpc tabbar-ruler sr-speedbar  )
+  '( auto-complete auto-yasnippet cl flymake-python-pyflakes flymake-cursor highlight-symbol markdown-mode+ expand-region ecb helm-gtags diminish rainbow-mode smartparens auctex 
+      powerline-evil volatile-highlights monokai-theme xterm-color mouse+ multi-term metaweblog org2blog xml-rpc sr-speedbar  )
   "A list of packages to ensure are installed at launch.")
 
 (defun knuth-packages-installed-p ()

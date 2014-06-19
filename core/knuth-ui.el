@@ -13,16 +13,13 @@
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; powerline visual mode
-(add-to-list 'load-path "~/.emacs.d/elpa/emacs-powerline")
-(require 'powerline)
+;; monokai theme load.
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'monokai t)
 
-(setq powerline-color1 "grey22")
-(setq powerline-color2 "grey40")
-
-(setq powerline-arrow-shape 'arrow)   ;; the default
-(setq powerline-arrow-shape 'curve)   ;; give your mode-line curves
-(setq powerline-arrow-shape 'arrow14) ;; best for small fonts
+;; powerline-evil
+(require 'powerline-evil)
+(powerline-default-theme)
 
 (custom-set-faces
   '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
@@ -34,7 +31,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (solarized-dark)))
+ ;;'(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" default)))
  '(ecb-windows-width 0.2 )
  '(sr-speedbar-width-x 25 )
