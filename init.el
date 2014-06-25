@@ -34,3 +34,31 @@ by knuth.")
 ;(require 'knuth-mode)
 (require 'knuth-editor)
 (require 'knuth-global-keybindings)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(current-language-environment "Korean")
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" default)))
+ '(ecb-windows-width 0.2)
+ '(size-indication-mode t)
+ '(sr-speedbar-width-x 25)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Envy Code R VS" :foundry "unknown" :slant normal :weight bold :height 96 :width normal))))
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
+ '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
+ '(tabbar-button-highlight ((t (:inherit tabbar-default))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "#959A79" :foreground "black" :weight bold))))
+ '(tabbar-highlight ((t (:underline t))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-unselected ((t (:inherit tabbar-default)))))
+(put 'downcase-region 'disabled nil)
