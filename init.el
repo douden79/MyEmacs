@@ -51,7 +51,7 @@ by knuth.")
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Envy Code R VS" :foundry "unknown" :slant normal :weight bold :height 96 :width normal))))
+ '(default ((t (:family "Envy Code R" :foundry "unknown" :full normal :weight normal :height 96 :width normal))))
  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
  '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
