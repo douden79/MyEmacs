@@ -65,6 +65,12 @@
               (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
               (local-set-key (kbd "M-g M-p") 'helm-gtags-parse-file)))
 
+;; minimap.el
+(when (display-graphic-p)
+	(require 'minimap)
+	;; enable minimap
+	(global-set-key (kbd "C-c m") 'minimap-toggle))
+
 ;; browser killing
 (global-set-key [f7] 'browse-kill-ring)
 
