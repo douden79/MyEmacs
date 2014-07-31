@@ -30,7 +30,10 @@
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
 (set-default default-buffer-file-coding-system 'utf-8)
-
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(defun set-coding-system () (setq buffer-file-coding-system 'utf-8))
+(add-hook 'find-file-hook 'set-coding-system)
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
@@ -38,7 +41,7 @@
 ;; requirement : https://github.com/browse-kill-ring/browse-kill-ring
 (require 'browse-kill-ring)
 
-;; delete-selection-mode 대응
+;; delete-selection-mode 대�쓳
 ;; (code from browse-kill-ring+.el)
 (defun browse-kill-ring-do-insert (buf pt)
   (let ((str (browse-kill-ring-current-string buf pt)))
@@ -50,7 +53,7 @@
         (delete-active-region))
       (browse-kill-ring-insert-and-highlight str))))
 
-;; 버그수정
+;; 踰꾧렇�닔�젙
 ;; (code from browse-kill-ring+.el)
 (defun browse-kill-ring-delete ()       ; Bound to `d' in selection-ring buffer.
   "Remove all occurrences of selection at point from current selection ring."
@@ -83,40 +86,40 @@ If no such overlay, raise an error."
           (throw 'browse-kill-ring-target-overlay-at ov)))
       (error "No selection-ring item here"))))
 
-;; 여러 라인의 복사본을 한줄로 표시(separator 표시 않함)
+;; �뿬�윭 �씪�씤�쓽 蹂듭궗蹂몄쓣 �븳以꾨줈 �몴�떆(separator �몴�떆 �븡�븿)
 (setq browse-kill-ring-display-style 'one-line)
 
-;; 복사본 추가시 중복되는 복사본 삭제(browse-kill-ring 에서만 작동한다.)
+;; 蹂듭궗蹂� 異붽���떆 以묐났�릺�뒗 蹂듭궗蹂� �궘�젣(browse-kill-ring �뿉�꽌留� �옉�룞�븳�떎.)
 (setq browse-kill-ring-no-duplicates t)
 
-;; 중복되는 복사본 표시않함
+;; 以묐났�릺�뒗 蹂듭궗蹂� �몴�떆�븡�븿
 (setq browse-kill-ring-display-duplicates nil)
 
-;; 최대 60글자만 표시
+;; 理쒕�� 60湲��옄留� �몴�떆
 (setq browse-kill-ring-maximum-display-length 60)
 
-;; 미리보기 표시
+;; 誘몃━蹂닿린 �몴�떆
 (setq browse-kill-ring-show-preview t)
 
-;; 종료시 browse-kill-ring 창 닫기
+;; 醫낅즺�떆 browse-kill-ring 李� �떕湲�
 (setq browse-kill-ring-quit-action 'kill-and-delete-window)
 
-;; 복사 목록 숫자 늘리기(디폴트 60개)
+;; 蹂듭궗 紐⑸줉 �닽�옄 �뒛由ш린(�뵒�뤃�듃 60媛�)
 (setq kill-ring-max 100)
 
-;; 속성은 제외하고 복사한다.(색상 등)
+;; �냽�꽦은 �젣�쇅�븯怨� 蹂듭궗�븳�떎.(�깋�긽 �벑)
 (setq browse-kill-ring-depropertize t)
 
 (add-hook 'browse-kill-ring-mode-hook
   (lambda ()
     ;; -------------------------------------------------------------------------
-    ;; 줄번호 표시 안함
+    ;; 以꾨쾲�샇 �몴�떆 �븞�븿
     (linum-mode -1)
     ;; -------------------------------------------------------------------------
-    ;; 커서라인 표시
+    ;; 而ㅼ꽌�씪�씤 �몴�떆
     (hl-line-mode)
     ;; -------------------------------------------------------------------------
-    ;; 기본키 설정 변경(u -> RET)
+    ;; 湲곕낯�궎 �꽕�젙 蹂�寃�(u -> RET)
     ;; (define-key browse-kill-ring-mode-map (kbd "RET") 'browse-kill-ring-insert-move-and-quit)
     ))
 
@@ -192,6 +195,10 @@ If no such overlay, raise an error."
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+; xcscope preference
+(require 'xcscope)
+(cscope-setup)
 
 ; ansi-term mode disable yasnnipet
 (add-hook 'term-mode-hook (lambda()

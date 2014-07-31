@@ -12,8 +12,7 @@
 (package-initialize)
 
 (defvar knuth-packages
-  '( auto-complete auto-yasnippet cl flymake-python-pyflakes flymake-cursor highlight-symbol markdown-mode+ expand-region ecb helm-gtags diminish minimap rainbow-mode smartparens auctex 
-      powerline-evil volatile-highlights monokai-theme solarized-theme xterm-color mouse+ multi-term metaweblog org2blog xml-rpc sr-speedbar  )
+  '( auto-complete auto-yasnippet cl flymake-python-pyflakes flymake-cursor highlight-symbol markdown-mode+ expand-region ecb helm-gtags diminish minimap rainbow-mode smartparens auctex xcscope powerline-evil volatile-highlights monokai-theme solarized-theme xterm-color mouse+ multi-term metaweblog org2blog xml-rpc sr-speedbar  )
   "A list of packages to ensure are installed at launch.")
 
 (defun knuth-packages-installed-p ()
