@@ -8,6 +8,30 @@
 
 (setq org-agenda-files (list "~/Doc/2014/company.org"
 							 "~/Doc/individual.org")) 
+(setq org-todo-keywords
+      '((sequence "TODO"
+                  "MAYBE"
+                  "NEXT"
+                  "STARTED"
+                  "WAITING"
+                  "DELEGATED"
+                  "|"
+                  "DONE"
+                  "DEFERRED"
+                  "CANCELLED")))
+
+(setq org-todo-keyword-faces
+      '(("PROJ" :background "blue" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("TODO" :background "red1" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("NEXT" :background "red1" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("STARTED" :background "orange" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("WAITING" :background "yellow" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("DEFERRED" :background "gold" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("DELEGATED" :background "gold" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("MAYBE" :background "gray" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("APPT" :background "red1" :foreground "black" :weight bold :box (:line-width 2 :style released-button))
+        ("DONE" :background "forest green" :weight bold :box (:line-width 2 :style released-button))
+        ("CANCELLED" :background "lime green" :foreground "black" :weight bold :box (:line-width 2 :style released-button))))
 
  ;Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
