@@ -41,7 +41,7 @@
 ;; requirement : https://github.com/browse-kill-ring/browse-kill-ring
 (require 'browse-kill-ring)
 
-;; delete-selection-mode ëŒ€ìì“³
+;; delete-selection-mode ëŒ€?ì“³
 ;; (code from browse-kill-ring+.el)
 (defun browse-kill-ring-do-insert (buf pt)
   (let ((str (browse-kill-ring-current-string buf pt)))
@@ -53,7 +53,6 @@
         (delete-active-region))
       (browse-kill-ring-insert-and-highlight str))))
 
-;; è¸°ê¾§ë ‡ìë‹”ìì ™
 ;; (code from browse-kill-ring+.el)
 (defun browse-kill-ring-delete ()       ; Bound to `d' in selection-ring buffer.
   "Remove all occurrences of selection at point from current selection ring."
@@ -86,40 +85,33 @@ If no such overlay, raise an error."
           (throw 'browse-kill-ring-target-overlay-at ov)))
       (error "No selection-ring item here"))))
 
-;; ìë¿¬ëìœ­ ëì”ªìì”¤ìì“½ è¹‚ë“­ê¶—è¹‚ëª„ì“£ íë¸³ä»¥ê¾¨ì¤ˆ íëª´ìë–†(separator íëª´ìë–† ìë¸¡íë¸¿)
 (setq browse-kill-ring-display-style 'one-line)
 
-;; è¹‚ë“­ê¶—è¹‚¸ ç•°ë¶½°€ìë–† ä»¥ë¬ë‚¬ëë¦ºëë’— è¹‚ë“­ê¶—è¹‚¸ ìê¶˜ìì £(browse-kill-ring ìë¿‰ìê½Œï§Œ ìì˜‰ëë£žíë¸³ëë–Ž.)
 (setq browse-kill-ring-no-duplicates t)
 
-;; ä»¥ë¬ë‚¬ëë¦ºëë’— è¹‚ë“­ê¶—è¹‚¸ íëª´ìë–†ìë¸¡íë¸¿
+; browse-kill-ring-display-duplicates
 (setq browse-kill-ring-display-duplicates nil)
-
-;; ï§¤ì’•Œ€ 60æ¹²€ìì˜„ï§Œ íëª´ìë–†
+;; browse-kill-ring-maximum-display-length size 
 (setq browse-kill-ring-maximum-display-length 60)
-
-;; èª˜ëªƒâ”è¹‚ë‹¿ë¦° íëª´ìë–†
+;; browse-kill-ring-show-preview 
 (setq browse-kill-ring-show-preview t)
-
-;; é†«ë‚…ì¦ºìë–† browse-kill-ring ï§¡½ ëë–•æ¹²°
+;; browse-kill-ring-quit-action
 (setq browse-kill-ring-quit-action 'kill-and-delete-window)
-
-;; è¹‚ë“­ê¶— ï§â‘¸ì¤‰ ìë‹½ìì˜„ ëë’›ç”±Ñˆë¦°(ëëµ’íë¤ƒíë“ƒ 60åª›œ)
+;; browse-kill-max 
 (setq kill-ring-max 100)
 
-;; ìëƒ½ìê½¦ì€ ìì £ìì‡…íë¸¯æ€¨  è¹‚ë“­ê¶—íë¸³ëë–Ž.(ìê¹‹ìê¸½ ëë²‘)
+;; browse-kill-ring-depropertize 
 (setq browse-kill-ring-depropertize t)
 
 (add-hook 'browse-kill-ring-mode-hook
   (lambda ()
     ;; -------------------------------------------------------------------------
-    ;; ä»¥ê¾¨ì¾²íìƒ‡ íëª´ìë–† ìë¸žíë¸¿
+    ;; linum-mode 
     (linum-mode -1)
     ;; -------------------------------------------------------------------------
-    ;; è€Œã…¼ê½Œëì”ªìì”¤ íëª´ìë–†
+    ;; hl-line-mode 
     (hl-line-mode)
     ;; -------------------------------------------------------------------------
-    ;; æ¹²ê³•ë‚¯íê¶Ž ìê½•ìì ™ è¹‚€å¯ƒ½(u -> RET)
     ;; (define-key browse-kill-ring-mode-map (kbd "RET") 'browse-kill-ring-insert-move-and-quit)
     ))
 
@@ -314,6 +306,3 @@ If no such overlay, raise an error."
 
 (provide 'knuth-editor)
 ;;; knuth-editor.el ends here
-
-
-
