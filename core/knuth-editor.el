@@ -26,14 +26,14 @@
 				   (setq python-indent 4))))
 
 ; default coding system.
-(set-default buffer-file-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
+(add-hook 'find-file-hook 'set-default-coding-systems)
+(set-terminal-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+
 (prefer-coding-system 'utf-8)
 (set-default default-buffer-file-coding-system 'utf-8)
-(setq locale-coding-system 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(defun set-coding-system () (setq buffer-file-coding-system 'utf-8))
-(add-hook 'find-file-hook 'set-coding-system)
+(set-keyboard-coding-system 'utf-8)
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
@@ -41,7 +41,6 @@
 ;; requirement : https://github.com/browse-kill-ring/browse-kill-ring
 (require 'browse-kill-ring)
 
-;; delete-selection-mode 대?쓳
 ;; (code from browse-kill-ring+.el)
 (defun browse-kill-ring-do-insert (buf pt)
   (let ((str (browse-kill-ring-current-string buf pt)))
@@ -184,9 +183,7 @@ If no such overlay, raise an error."
 (modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.cpp\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
+
 
 ; xcscope preference
 (require 'xcscope)
