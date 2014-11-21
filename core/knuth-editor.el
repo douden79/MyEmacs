@@ -26,14 +26,18 @@
 				   (setq python-indent 4))))
 
 ; default coding system.
-(set-default-coding-systems 'utf-8)
-(add-hook 'find-file-hook 'set-default-coding-systems)
-(set-terminal-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
+;(set-default-coding-systems 'utf-8)
+;(add-hook 'find-file-hook 'set-default-coding-systems)
+;(set-terminal-coding-system 'utf-8)
+;(set-default-coding-systems 'utf-8)
 
 (prefer-coding-system 'utf-8)
-(set-default default-buffer-file-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+(set-terminal-coding-system 'utf-8)
+
+;(set-default default-buffer-file-coding-system 'utf-8)
+;(set-keyboard-coding-system 'utf-8)
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
@@ -106,7 +110,7 @@ If no such overlay, raise an error."
   (lambda ()
     ;; -------------------------------------------------------------------------
     ;; linum-mode 
-    (linum-mode -1)
+;;    (linum-mode -1)
     ;; -------------------------------------------------------------------------
     ;; hl-line-mode 
     (hl-line-mode)

@@ -77,7 +77,7 @@
 ;; customize
 (setq helm-gtags-path-style 'relative)
 (setq helm-gtags-ignore-case t)
-(setq helm-gtags-read-only t)
+;;(setq helm-gtags-read-only t)
 (setq helm-gtags-auto-update t)
 
 ;; key bindings
