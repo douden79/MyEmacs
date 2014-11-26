@@ -16,7 +16,7 @@
 ;; monokai theme load.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;;(load-theme 'monokai t)
-;(load-theme 'solarized-light t)
+(load-theme 'solarized-light t)
 
 ;; powerline-evil
 (require 'powerline-evil)

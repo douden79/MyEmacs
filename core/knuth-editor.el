@@ -35,6 +35,8 @@
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
 (set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 ;(set-default default-buffer-file-coding-system 'utf-8)
 ;(set-keyboard-coding-system 'utf-8)
@@ -304,6 +306,13 @@ If no such overlay, raise an error."
 
 ; markdown
 (require 'knuth-markdown)
+
+;; set multiple cusor
+;; really very good ( multi line edit )
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (provide 'knuth-editor)
 ;;; knuth-editor.el ends here

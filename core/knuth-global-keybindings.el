@@ -51,10 +51,10 @@
 (define-key ecb-mode-map (kbd "M-0") 'ecb-goto-window-edit1)
 
 ;; global tabbar shortcut
-(global-set-key (kbd "C-S-p") 'tabbar-backward-group)
-(global-set-key (kbd "C-S-n") 'tabbar-forward-group)
-(global-set-key (kbd "C-<") 'tabbar-backward)
-(global-set-key (kbd "C->") 'tabbar-forward) ;; tabbar.el, put all the buffers on the tabs.
+;;(global-set-key (kbd "C-S-p") 'tabbar-backward-group)
+;;(global-set-key (kbd "C-S-n") 'tabbar-forward-group)
+;;(global-set-key (kbd "C-<") 'tabbar-backward)
+;;(global-set-key (kbd "C->") 'tabbar-forward) ;; tabbar.el, put all the buffers on the tabs.
 
 ;; yasnnippet
 (define-key global-map (kbd "C-.") 'yas-expand)
