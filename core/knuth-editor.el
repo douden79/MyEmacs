@@ -17,8 +17,10 @@
 (setq-default c-basic-offset 4
 			  tab-width 4
 			  indent-tabs-mode t)
-
+;@@@
 ; python tab hook
+;@@@
+
 (add-hook 'python-mode-hook
 		(function (lambda ()
 				   (setq indent-tabs-mode t)
@@ -26,7 +28,7 @@
 				   (setq python-indent 4))))
 
 ; default coding system.
-;(set-default-coding-systems 'utf-8)
+;;(set-default-coding-systems 'utf-8)
 ;(add-hook 'find-file-hook 'set-default-coding-systems)
 ;(set-terminal-coding-system 'utf-8)
 ;(set-default-coding-systems 'utf-8)
@@ -34,6 +36,7 @@
 (prefer-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)
+(set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
@@ -42,6 +45,7 @@
 ;(set-keyboard-coding-system 'utf-8)
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.c\\'" . linux-c-mode))
 
 ;; browse kill ring
 ;; requirement : https://github.com/browse-kill-ring/browse-kill-ring
@@ -114,7 +118,6 @@ If no such overlay, raise an error."
     ;; linum-mode 
 ;;    (linum-mode -1)
     ;; -------------------------------------------------------------------------
-    ;; hl-line-mode 
     (hl-line-mode)
     ;; -------------------------------------------------------------------------
     ;; (define-key browse-kill-ring-mode-map (kbd "RET") 'browse-kill-ring-insert-move-and-quit)
@@ -171,14 +174,17 @@ If no such overlay, raise an error."
 (volatile-highlights-mode t)
 (diminish 'volatile-highlights-mode)
 
-;; load korean font set.
+;@@@
+; load korean font set.
+;@@@
+
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
                    '("Gulim" . "iso10646-1"))
 (set-fontset-font "fontset-default" '(#xe0bc . #xf66e)
                    '("Gulim" . "iso10646-1"))
 
 (setq face-font-rescale-alist
-       '((".*hiragino.*" . 1.2)
+       '((".*hiragino.*" . 1.0)
 		           (".*Gulim.*" . 1.0)))
 
  ;; coding system read file
@@ -247,6 +253,7 @@ If no such overlay, raise an error."
              "static" "throw" "union" "wchar_t" "bitor" "class" "delete" "explicit"
              "friend" "mutable" "or" "reinterpret_cast" "static_cast" "true" 
              "unsigned" "while" ) #'(lambda (a b) (> (length a) (length b)))))
+
 (defvar ac-source-c++
       '((candidates
          . (lambda ()
@@ -301,18 +308,27 @@ If no such overlay, raise an error."
 (multi-term-keystroke-setup)
 (setq multi-term-program "/bin/bash")
 
+;@@@
 ; set cusor color
+;@@@
+
 (set-cursor-color "#268BD2")
 
 ; markdown
 (require 'knuth-markdown)
 
-;; set multiple cusor
-;; really very good ( multi line edit )
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;@@@
+; set multiple cusor
+; really very good ( multi line edit )
+;@@@
 
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-all-symbols-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-words-like-this)
+
+(add-hook 'sgml-mode-hook
+          (lambda ()
+            (require 'rename-sgml-tag)
+            (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
 (provide 'knuth-editor)
 ;;; knuth-editor.el ends here
